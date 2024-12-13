@@ -1,0 +1,24 @@
+# notes
+*.amiel.*
+
+# Node modules
+node_modules
+
+# environment variables
+.env
+
+# logs 
+logs/
+*.log
+mpm-debug.log
+
+# build outputs
+/dist
+/build
+
+# ide configs
+.vscode/
+*.swp
+*.swo
+.idea/
+.eslintcache
