@@ -87,7 +87,9 @@ You will work **collaboratively** on **Tasks 3, 7, 8,** and work **independently
 The following resource may help:
 
 REQUIRED [Agile values](https://resources.scrumalliance.org/Article/key-values-principles-agile-manifesto) (3 mins)
+
 RECOMMENDED [Agile Practices](https://www.ntaskmanager.com/blog/agile-best-practices/) (10 mins)
+
 RECOMMENDED [Design Thinking Practices](https://www.innovationtraining.org/steps-to-design-thinking/) (10 mins)
 
 **<ins>Task 4:</ins>** Install MongoDB Locally
@@ -149,6 +151,7 @@ If you are not assigned to a team with UX Designers, you do not need to attend a
 The following resources may help if you are building the application in React:
 
 RECOMMENDED: [React tutorial](https://www.w3schools.com/react/)
+
 RECOMMENDED: [React course for beginners](https://www.skillshare.com/classes/Building-your-first-React-application-in-75-minutes-or-so/1253484924) (1.5 hours)
 
 **<ins>Task 10:</ins>** Present at Show and Tell
