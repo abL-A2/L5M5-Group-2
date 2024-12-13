@@ -158,6 +158,7 @@ If you are not assigned to a team with UX Designers, you do not need to attend a
 The following resources may help if you are building the application in React:
 
 RECOMMENDED: [React tutorial](https://www.w3schools.com/react/)
+
 RECOMMENDED: [React course for beginners](https://www.skillshare.com/classes/Building-your-first-React-application-in-75-minutes-or-so/1253484924) (1.5 hours)
 
 **<ins>Task 10:</ins>** Present at Show and Tell
