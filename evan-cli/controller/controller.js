@@ -12,7 +12,7 @@ const getItems = async (req, res) => {
 const findItems = async (req, res) => {
     try{ 
         const title = req.params.title;
-        const item = await auctionItem.find({title: title});
+        const item = await auctionItem.find({title: {$regex: title, $options: 'i'}});
         res.status(200).json(item);
     } catch (err) {
         console.error("Error: ", err)
