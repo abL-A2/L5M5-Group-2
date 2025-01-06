@@ -1,7 +1,7 @@
-import Zlogo from '../public/ZLogo.png';
+import Zlogo from '/ZLogo.png';
 import styles from './Header.module.css';
-import search from '../public/searchIcon.png';
-import arrow from '../public/arrow.png';
+import search from '/searchIcon.png';
+import arrow from '/arrow.png';
 
 function Header() {
     return (

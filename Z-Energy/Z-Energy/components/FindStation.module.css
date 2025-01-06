@@ -4,7 +4,7 @@
   height: 44vh;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  /* gap: 10px; */
   flex-shrink: 0;
   background: linear-gradient(90deg, #ed570e 0%, #ffcb09 100%);
 }
@@ -27,15 +27,15 @@
 
 .bigText {
   color: #fff;
-  font-size: 50px;
+  font-size: 1.5em;
   font-style: normal;
   font-weight: 900;
   /* line-height: 125px; */
 }
 
 .searchBox {
-    margin: 0;
-    margin-top: -2%;
+  margin: 0;
+  margin-top: -2%;
 }
 
 .inputBox {
@@ -44,4 +44,27 @@
   border-radius: 6px;
   border: 2px solid #b3b2b2;
   background: #fff;
+}
+
+.locationDiv h4 {
+  color: #8f340b;
+  text-align: center;
+  font-family: Calibri;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 41px; /* 136.667% */
+  font-size: 1.1em;
+  text-transform: uppercase;
+  margin-left: 10px;
+}
+
+.locationDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+}
+
+.locationDiv img {
+  height: 4vh;
 }
