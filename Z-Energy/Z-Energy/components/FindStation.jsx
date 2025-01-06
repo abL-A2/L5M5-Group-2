@@ -22,12 +22,11 @@ function FindStation() {
            <a href=""> <h4>OR USE MY CURRENT LOCATION</h4></a>
           </div>
         </div>
-        <div>
+        <div className={styles.filterBtnBox}>
           {/* three tabs along the bottom */}
-          <button>Filter by service</button>
-          <button></button>
-          <button></button>
-          tabs
+          <button className={styles.filterBtn}>Filter by service</button>
+          <button className={styles.filterBtn}>Filter by fuel price</button>
+          <button className={styles.filterBtn}>Filter by distance</button>
         </div>
       </div>
     </>

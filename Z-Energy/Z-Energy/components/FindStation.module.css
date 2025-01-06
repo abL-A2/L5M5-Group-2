@@ -1,19 +1,12 @@
 .findStnBox {
   display: flex;
-  width: 100vw;
-  height: 44vh;
-  justify-content: center;
-  align-items: center;
-  /* gap: 10px; */
-  flex-shrink: 0;
-  background: linear-gradient(90deg, #ed570e 0%, #ffcb09 100%);
-}
-
-.findStnBox {
-  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  width: 100vw;
+  height: 44vh;
+  flex-shrink: 0;
+  background: linear-gradient(90deg, #ed570e 0%, #ffcb09 100%);
 }
 
 .mainBox {
@@ -63,8 +56,56 @@
   flex-direction: row;
   align-items: center;
   margin: 0;
+  margin-top: -3vh;
 }
 
 .locationDiv img {
   height: 4vh;
+}
+
+.filterBtnBox {
+  width: 80vw;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* buttons for filtering */
+.filterBtn {
+  display: flex;
+  width: 20vw;
+  height: 7vh;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1%;
+  border-radius: 8px 8px 0px 0px;
+  border: none;
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(7.5px);
+  color: #2c259b;
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 41px; 
+}
+
+.filterBtn:hover {
+  border-radius: 8px 8px 0px 0px;
+  background: #e2e1f1;
+  backdrop-filter: blur(7.5px);
+  color: #2c259b;
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 41px; 
+}
+
+.filterBtn:focus {
+  border-radius: 8px 8px 0px 0px;
+  background: #2c259b;
+  backdrop-filter: blur(7.5px);
+  color: #fff;
+  text-align: center;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 41px;
 }
