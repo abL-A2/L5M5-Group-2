@@ -123,10 +123,10 @@ const auctionItems = [
 
 export default auctionItems;
 
-db.test -
-  one.insertOne({
-    title: "Moon Rock",
-    description: "A moon rock retrieved during the Apollo 12 mission, sealed inside a glasscase.",
-    start_price: 1200,
-    reserve_price: 2000,
-  });
+// db.test -
+//   one.insertOne({
+//     title: "Moon Rock",
+//     description: "A moon rock retrieved during the Apollo 12 mission, sealed inside a glasscase.",
+//     start_price: 1200,
+//     reserve_price: 2000,
+//   });
