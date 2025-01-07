@@ -30,7 +30,7 @@
 
 .searchBox {
   margin: 0;
-  margin-top: -2%;
+  /* margin-top: -2%; */
 }
 
 .inputBox {
@@ -58,7 +58,7 @@
   flex-direction: row;
   align-items: center;
   margin: 0;
-  margin-top: -3vh;
+  margin-top: -2vh;
 }
 
 .locationDiv img {
