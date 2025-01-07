@@ -3,3 +3,32 @@
     height: 126vh;
     background-color: bisque;
 }
+
+.locationPin{
+    width: 3vw;
+}
+
+.station1Box{
+    position: absolute;
+    	top: 3vh;
+        right: 68vw;
+    width: 25vw;
+    height: 30vh;
+    background-color: lightcoral;
+}
+.station2Box{
+    position: absolute;
+    	top: 33vh;
+        right: 68vw;
+    width: 25vw;
+    height: 30vh;
+    background-color: lightcoral;
+}
+.station3Box{
+    position: absolute;
+    	top: 63vh;
+        right: 68vw;
+    width: 25vw;
+    height: 30vh;
+    background-color: lightcoral;
+}

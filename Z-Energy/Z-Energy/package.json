@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vis.gl/react-google-maps": "https://registry.npmjs.org/@vis.gl/react-google-maps/-/react-google-maps-1.0.0.tgz",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
