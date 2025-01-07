@@ -1,34 +1,131 @@
-.mapBox{
-    width: 100vw;
-    height: 126vh;
-    background-color: bisque;
+.mapBox {
+  width: 100vw;
+  height: 126vh;
+  background-color: bisque;
 }
 
-.locationPin{
-    width: 3vw;
+.locationPin {
+  width: 3vw;
 }
 
-.station1Box{
-    position: absolute;
-    	top: 3vh;
-        right: 68vw;
-    width: 25vw;
-    height: 30vh;
-    background-color: lightcoral;
+.station1Box {
+  position: absolute;
+  top: 3vh;
+  right: 68vw;
+  width: 25vw;
+  height: 30vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
 }
-.station2Box{
-    position: absolute;
-    	top: 33vh;
-        right: 68vw;
-    width: 25vw;
-    height: 30vh;
-    background-color: lightcoral;
+
+.station1Title {
+  margin-left: 5%;
+  padding: 0;
+  /* background-color: aliceblue; */
 }
-.station3Box{
-    position: absolute;
-    	top: 63vh;
-        right: 68vw;
-    width: 25vw;
-    height: 30vh;
-    background-color: lightcoral;
+
+.station1Title h3 {
+  color: #2c259b;
+  font-style: normal;
+  font-weight: 900;
+  margin-bottom: -20px;
+}
+
+.station1Info {
+  /* background-color: lightgreen; */
+  margin-left: 5%;
+  margin-bottom: 2%;
+}
+
+.station1Info ol{
+    margin: 0;
+}
+
+.stationBtns {
+  /* background-color: lightgrey; */
+  margin-left: 5%;
+  display: flex;
+  align-items: center;
+  gap: 2%;
+}
+
+.station2Box {
+  position: absolute;
+  top: 33vh;
+  right: 68vw;
+  width: 25vw;
+  height: 30vh;
+  background-color: white;
+}
+
+.station2Title {
+    margin-left: 5%;
+    padding: 0;
+    /* background-color: aliceblue; */
+  }
+  
+  .station2Title h3 {
+    color: #2c259b;
+    font-style: normal;
+    font-weight: 900;
+    margin-bottom: -20px;
+  }
+  
+  .station2Info {
+    /* background-color: lightgreen; */
+    margin-left: 5%;
+    margin-bottom: 2%;
+  }
+  
+  .station2Info ol{
+      margin: 0;
+  }
+  
+
+.station3Box {
+  position: absolute;
+  top: 63vh;
+  right: 68vw;
+  width: 25vw;
+  height: 30vh;
+  background-color: white;
+}
+
+.station3Title {
+    margin-left: 5%;
+    padding: 0;
+    /* background-color: aliceblue; */
+  }
+  
+  .station3Title h3 {
+    color: #2c259b;
+    font-style: normal;
+    font-weight: 900;
+    margin-bottom: -20px;
+  }
+  
+  .station3Info {
+    /* background-color: lightgreen; */
+    margin-left: 5%;
+    margin-bottom: 2%;
+  }
+  
+  .station3Info ol{
+      margin: 0;
+  }
+
+.directionsBtn {
+  width: 333px;
+  height: 49px;
+  flex-shrink: 0;
+  border-radius: 94px;
+  border: 1px solid #fe0c00;
+  background: #ed560e;
+  color: white;
+  font-weight: 600;
+}
+
+.heartImg{
+    width: 2vw;
 }
