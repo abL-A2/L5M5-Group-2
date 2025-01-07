@@ -24,11 +24,12 @@ export default function MapView() {
 
   const handleInfoWindow = () => {
     setInfoWindow(!infoWindow);
-    if (infoWindow === true) {
-      infoWindow.open();
-    } else {
-        infoWindow.close();
-    }
+    console.log("Clicked!");
+    // if (infoWindow === true) {
+    //   InfoWindow(open());
+    // } else {
+    //     InfoWindow(close());
+    // }
   };
   //
   // api key
@@ -133,8 +134,12 @@ export default function MapView() {
 
             {/* This marker will be used for the 3 closest stations, potentially use a map function over 
         API response / DB info */}
-        {/* Position will be drawn from info from db */}
-            <AdvancedMarker position={position} gmpClickable={true} onClick={handleInfoWindow}>
+            {/* Position will be drawn from info from db */}
+            <AdvancedMarker
+              position={position}
+              gmpClickable={true}
+              onClick={handleInfoWindow}
+            >
               <div className={styles.advancedMarker}>
                 <img src={pin} alt="Z Logo Pin" className={styles.zPin} />
 
@@ -147,9 +152,18 @@ export default function MapView() {
                 <div className={styles.distanceBox}>xyz KM</div>
               </div>
             </AdvancedMarker>
-            <InfoWindow>
-                <h1>Hello I am info window!</h1>
-            </InfoWindow>
+            {/* info window attached to marker */}
+            {infoWindow && (
+              <InfoWindow
+                position={position}
+                onCloseClick={() => setInfoWindow(false)} // Close InfoWindow on close button click
+              >
+                <div>
+                  <h2>Custom InfoWindow</h2>
+                  <p>This is a custom InfoWindow content.</p>
+                </div>
+              </InfoWindow>
+            )}
           </Map>
         </div>
       </APIProvider>
