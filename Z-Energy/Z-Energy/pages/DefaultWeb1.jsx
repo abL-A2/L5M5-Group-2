@@ -1,6 +1,6 @@
 import Header from '../components/Header'
 import FindStation from './components/FindStation';
-import FilterSection from './components/FilterSection';
+// import FilterSection from './components/FilterSection';
 import MapView from './components/MapView';
 import Footer from '../components/Footer';
 
@@ -9,7 +9,7 @@ function page1() {
     <>
     <Header />
     <FindStation />
-    <FilterSection />
+    {/* <FilterSection /> */}
     <MapView />
     <Footer />
     </>

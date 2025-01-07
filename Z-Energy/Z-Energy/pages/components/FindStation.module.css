@@ -109,3 +109,10 @@
   font-weight: 600;
   line-height: 41px;
 }
+
+.filtersBox{
+  height: 50vh;
+  width: 100vw;
+  background-color: antiquewhite;
+  margin: 0;
+}

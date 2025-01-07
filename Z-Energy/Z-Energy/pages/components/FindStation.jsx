@@ -1,7 +1,31 @@
+import React, { useState } from "react";
 import styles from "./FindStation.module.css";
 import locationIcon from "/locationIcon.png";
 
 function FindStation() {
+  // This is for the filter buttons
+  const [pageDisplayed, setPageDisplayed] = useState("");
+
+  // setPageDisplayed({component: <FilterService />})
+  
+    const handleContentClick = (event) => {
+      console.log(event.target.id);
+      //this works but it's not recommended to store components directly in the state in react
+      // if (event.target.id === "service") {
+      //   setPageDisplayed({
+      //     component: <FilterService />,
+      //   });
+      // } else if (event.target.id === "price") {
+      //   setPageDisplayed({
+      //     component: <FilterPrice />,
+      //   });
+      // } else {
+      //   setPageDisplayed({
+      //     component: <FilterDistance />,
+      //   });
+      // }
+      // setPage(event.target.id)
+    };
   return (
     <>
       <div className={styles.findStnBox}>
@@ -23,11 +47,27 @@ function FindStation() {
           </div>
         </div>
         <div className={styles.filterBtnBox}>
-          {/* three tabs along the bottom */}
+          
+        {/* This is for the conditional rendering of the filter section -  */}
+        {/* <button className={styles.btn} id="filter-service" onClick={handleContentClick}>
+          Filter by service
+        </button>
+        <button className={styles.btn} id="filter-price" onClick={handleContentClick}>
+          Filter by price
+        </button>
+        <button className={styles.btn} id="filter-distance" onClick={handleContentClick}>
+          Filter by distance
+        </button> */}
           <button className={styles.filterBtn}>Filter by service</button>
           <button className={styles.filterBtn}>Filter by fuel price</button>
           <button className={styles.filterBtn}>Filter by distance</button>
         </div>
+      </div>
+      <div className={styles.filtersBox}>
+        I am showing the filters 
+      {/* This is the section that conditionally shows the different filter screens */}
+      {pageDisplayed.component}
+
       </div>
     </>
   );
