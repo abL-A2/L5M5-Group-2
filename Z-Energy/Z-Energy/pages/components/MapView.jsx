@@ -15,10 +15,20 @@ import {
 
 export default function MapView() {
   const [active, setActive] = useState(false);
+  const [infoWindow, setInfoWindow] = useState(false);
   const position = { lat: -36.84, lng: 174.76 };
 
   const handleClick = () => {
     setActive(!active);
+  };
+
+  const handleInfoWindow = () => {
+    setInfoWindow(!infoWindow);
+    if (infoWindow === true) {
+      infoWindow.open();
+    } else {
+        infoWindow.close();
+    }
   };
   //
   // api key
@@ -111,14 +121,20 @@ export default function MapView() {
                 />
               </div>
             </div>
-            {/* <AdvancedMarker position={position}>
-            <img src={customPin} alt="location pin" className={styles.locationPin}/>
-        </AdvancedMarker> */}
 
-
-        {/* This marker will be used for the 3 closest stations, potentially use a map function over 
-        API response / DB info */}
+            {/* This is the marker to show the users location */}
             <AdvancedMarker position={position}>
+              <img
+                src={customPin}
+                alt="location pin"
+                className={styles.locationPin}
+              />
+            </AdvancedMarker>
+
+            {/* This marker will be used for the 3 closest stations, potentially use a map function over 
+        API response / DB info */}
+        {/* Position will be drawn from info from db */}
+            <AdvancedMarker position={position} gmpClickable={true} onClick={handleInfoWindow}>
               <div className={styles.advancedMarker}>
                 <img src={pin} alt="Z Logo Pin" className={styles.zPin} />
 
@@ -131,6 +147,9 @@ export default function MapView() {
                 <div className={styles.distanceBox}>xyz KM</div>
               </div>
             </AdvancedMarker>
+            <InfoWindow>
+                <h1>Hello I am info window!</h1>
+            </InfoWindow>
           </Map>
         </div>
       </APIProvider>

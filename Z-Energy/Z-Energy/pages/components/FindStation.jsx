@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import styles from "./FindStation.module.css";
 import locationIcon from "/locationIcon.png";
+import FilterServices from "../components/FilterServices";
 
 function FindStation() {
   // This is for the filter buttons
   const [pageDisplayed, setPageDisplayed] = useState("");
 
-  // setPageDisplayed({component: <FilterService />})
+  // setPageDisplayed({component: <FilterServices />})
   
     const handleContentClick = (event) => {
       console.log(event.target.id);
@@ -64,9 +65,10 @@ function FindStation() {
         </div>
       </div>
       <div className={styles.filtersBox}>
-        I am showing the filters 
+        <FilterServices />
+        
       {/* This is the section that conditionally shows the different filter screens */}
-      {pageDisplayed.component}
+      {/* {pageDisplayed.component} */}
 
       </div>
     </>
