@@ -94,26 +94,7 @@ const distanceAndDuration = async (originalLat, originalLng, destinationLat, des
 //     }
 //   });
 
-// Express.js example for a POST request to insert a new station into MongoDB
-// app.post('/stations', async (req, res) => {
-//     try {
-//       const { name, address, coordinates, fuelCost, services } = req.body;
-  
-//       // Create a new station document
-//       const newStation = new Station({
-//         name,
-//         address,
-//         location: { type: 'Point', coordinates },
-//         fuelCost,
-//         services,
-//       });
-  
-//       await newStation.save();  // Save to MongoDB
-//       res.status(201).json({ message: 'Station added successfully' });
-//     } catch (err) {
-//       res.status(500).json({ error: 'Failed to add station' });
-//     }
-//   });
+
   
   
 
