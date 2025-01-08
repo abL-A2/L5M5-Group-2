@@ -130,3 +130,10 @@ export default auctionItems;
 //     start_price: 1200,
 //     reserve_price: 2000,
 //   });
+
+// {
+//   title: "",
+//   description: "",
+//   start_price: 0,
+//   reserve_price: 0,
+// },
