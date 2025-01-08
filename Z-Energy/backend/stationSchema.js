@@ -13,7 +13,7 @@ const stationSchema = new mongoose.Schema({
   opening_hours: Object,
 });
 
-// below is the table information suggested by UX team
+// * below is the table information suggested by UX team
 // station_id	INT (Primary Key)	Unique identifier for each station.
 // name	VARCHAR	Station name.
 // address	TEXT	Station address.
