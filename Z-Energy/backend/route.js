@@ -1,8 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const { addressCoord } = require("./controller")
+const { addressCoord, getDirections } = require("./controller");
 
-// turn address into coordinates
+// Convert address into coordinates
 router.get("/address", addressCoord);
+
+// Get directions for the selected station
+router.get("/directions", getDirections);
 
 module.exports = router;
