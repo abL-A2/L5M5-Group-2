@@ -1,5 +1,13 @@
+/* ! hopefully this imports the 'Test Calibre' font from './fonts' */
+@font-face {
+  font-family: "Test Calibre";
+  src: url("../fonts/test-calibre-regular.woff2") format("woff2");
+  font-weight: 400; /* ? default, i think? */
+  font-style: normal;
+}
+
 :root {
-  font-family: Calibre, sans-serif;
+  font-family: Calibre, "Test Calibre", sans-serif;
   /* need to use find and use Calibre font pack */
   font-synthesis: none;
   text-rendering: optimizeLegibility;
