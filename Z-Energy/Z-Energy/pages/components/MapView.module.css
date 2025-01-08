@@ -1,7 +1,15 @@
 .mapBox {
-  width: 100vw;
+  position: relative;
+  width: 100%;
   height: 126vh;
-  background-color: bisque;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+}
+
+.mapBox:active {
+  cursor: grabbing;
 }
 
 .locationPin {
@@ -227,7 +235,8 @@
 
 .infoWindow {
   width: 50vw;
-  height: 25vh;
+  height: auto;
+  max-height: 25vh;
   margin: 0;
   padding: 0;
   display: flex;
@@ -235,17 +244,19 @@
 
 .infoWindowLeft {
   width: 40%;
-  height: 20vh;
+  height: auto;
   display: flex;
   flex-direction: column;
-  /* background-color: lightblue; */
+  padding: 10px;
+  gap: 8px;
 }
 
 .infoWindowLeft h2 {
   color: #2c259b;
   font-style: normal;
   font-weight: 900;
-  margin-bottom: -2%;
+  margin: 0;
+  padding: 0;
 }
 
 .infoWindowLeft div {
@@ -255,7 +266,7 @@
 
 .infoWindowRight {
   width: 20%;
-  height: 70%;
+  height: 5vh;
   border-radius: 13px;
   background-color: rgb(243, 243, 243);
   display: flex;
@@ -294,7 +305,7 @@
 }
 
 .servicesList {
-  margin-top: 10px;
+  margin: 5px 0;
 }
 
 .servicesList ul {
@@ -303,12 +314,12 @@
   margin: 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 8px 20px;
+  gap: 4px 22px;
   width: 100%;
 }
 
 .serviceItem {
-  margin: 5px 0;
+  margin: 2px 0;
   font-size: 14px;
   white-space: nowrap;
   flex: 0 1 auto;

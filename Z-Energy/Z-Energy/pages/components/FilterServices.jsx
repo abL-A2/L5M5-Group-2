@@ -44,7 +44,7 @@ export default function FilterServices() {
               <button className={styles.filterBtn}>EV charging</button>
             </div>
           </div>
-          <div className={styles.stationSortBox}>
+          <div className={styles.sortBox}>
             {/* Sort by */}
             <h3 className={styles.filterTitle}>Sort by</h3>
             <div className={styles.btnBox}>
@@ -52,6 +52,10 @@ export default function FilterServices() {
               <button className={styles.filterBtn}>Cheapest</button>
               <button className={styles.filterBtn}>Economical</button>
             </div>
+
+          </div>
+          <div>
+            <button className={styles.resetFiltersBtn}>Reset filters</button>
           </div>
         </div>
       </div>

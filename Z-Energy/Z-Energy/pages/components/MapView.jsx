@@ -5,6 +5,7 @@ import fullHeart from "/fullHeart.png";
 import zLogo from "/ZLogo.png";
 import pin from "/zPin.png";
 import whiteHeart from "/lucide_heart.png";
+import downArrow from "/downArrow.png";
 import { useState } from "react";
 import {
   APIProvider,
@@ -35,7 +36,21 @@ export default function MapView({ stations = [], userLocation }) {
     <>
       <APIProvider apiKey="AIzaSyCgpO3-bfWZ8BQwcXWId3XGR-ZpN9Gn3LU">
         <div className={styles.mapBox}>
-          <Map zoom={13} center={position} mapId="176a731b39794e85">
+          <Map
+            zoom={13}
+            center={position}
+            mapId="176a731b39794e85"
+            gestureHandling="greedy"
+            mapOptions={{
+              streetViewControl: true,
+              zoomControl: true,
+              gestureHandling: "greedy",
+              fullscreenControl: true,
+              keyboardShortcuts: true,
+              scrollwheel: true,
+              disableDoubleClickZoom: false,
+            }}
+          >
             <div className={styles.station1Box}>
               <div className={styles.station1Title}>
                 <h3>{stations[0]?.name || "Z Station One"}</h3>
@@ -73,15 +88,17 @@ export default function MapView({ stations = [], userLocation }) {
               </div>
               <div className={styles.station2Info}>
                 <h4>Opening hours V</h4>
-                {stations[1]?.services && (
-                  <ul>
-                    {stations[1].services.map((service) => (
-                      <li key={service} className={styles.serviceItem}>
-                        {service}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                <div className={styles.servicesList}>
+                  {stations[1]?.services && (
+                    <ul>
+                      {stations[1].services.map((service) => (
+                        <li key={service} className={styles.serviceItem}>
+                          {service}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               </div>
               <div className={styles.stationBtns}>
                 <button className={styles.directionsBtn}>Get directions</button>
@@ -101,15 +118,17 @@ export default function MapView({ stations = [], userLocation }) {
               </div>
               <div className={styles.station3Info}>
                 <h4>Opening hours V</h4>
-                {stations[2]?.services && (
-                  <ul>
-                    {stations[2].services.map((service) => (
-                      <li key={service} className={styles.serviceItem}>
-                        {service}
-                      </li>
-                    ))}
-                  </ul>
-                )}
+                <div className={styles.servicesList}>
+                  {stations[2]?.services && (
+                    <ul>
+                      {stations[2].services.map((service) => (
+                        <li key={service} className={styles.serviceItem}>
+                          {service}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
               </div>
               <div className={styles.stationBtns}>
                 <button className={styles.directionsBtn}>Get directions</button>
@@ -187,15 +206,17 @@ export default function MapView({ stations = [], userLocation }) {
                 </div>
                 <div className={styles[`station${index + 1}Info`]}>
                   <h4>Opening hours V</h4>
-                  {station.services && (
-                    <ul>
-                      {station.services.map((service) => (
-                        <li key={service} className={styles.serviceItem}>
-                          {service}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                  <div className={styles.servicesList}>
+                    {station.services && (
+                      <ul>
+                        {station.services.map((service) => (
+                          <li key={service} className={styles.serviceItem}>
+                            {service}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 </div>
                 <div className={styles.stationBtns}>
                   <button className={styles.directionsBtn}>
