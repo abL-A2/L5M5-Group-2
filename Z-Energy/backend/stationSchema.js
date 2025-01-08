@@ -23,4 +23,4 @@ const stationSchema = new mongoose.Schema({
 // amenities	JSONB	List of amenities (e.g., Car Wash, Shop).
 // price_per_litre	JSONB	Fuel price data (e.g., petrol: $2.50/L).
 
-module.exports = mongoose.model("stationSchema", auctionSchema);
+module.exports = mongoose.model("stationSchema", stationSchema);
