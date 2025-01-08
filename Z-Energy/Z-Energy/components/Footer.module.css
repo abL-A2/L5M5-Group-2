@@ -1,0 +1,7 @@
+.footer{
+    width: 100%;
+    height: 54vh;
+    background-color: palegreen;
+    background: url(./footer.png) lightgray 50% / contain no-repeat;
+    background-size: 100% 100%;
+}
