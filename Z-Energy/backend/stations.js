@@ -1,4 +1,3 @@
-const mongoose = require('mongoose');
 const stationSchema = require('./stationSchema');
 
 async function createStationList(){
