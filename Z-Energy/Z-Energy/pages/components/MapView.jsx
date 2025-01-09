@@ -19,6 +19,8 @@ export default function MapView({ stations = [], userLocation }) {
   const [active, setActive] = useState(false);
   const [infoWindow, setInfoWindow] = useState(false);
   const [selectedStation, setSelectedStation] = useState(null);
+  const [distances, setDistances] = useState({});
+  const [stationDistances, setStationDistances] = useState({});
 
   // Default to Auckland if no user location
   const position = userLocation || { lat: -36.84, lng: 174.76 };
@@ -30,6 +32,47 @@ export default function MapView({ stations = [], userLocation }) {
   const handleInfoWindow = (station) => {
     setSelectedStation(station);
     setInfoWindow(!infoWindow);
+  };
+
+  const calculateDistance = async (station) => {
+    if (!window.google || !station || !position) return "Calculating...";
+    
+    // If we already have the distance, return it
+    if (stationDistances[station.station_id]) {
+      return stationDistances[station.station_id];
+    }
+
+    try {
+      const service = new window.google.maps.DistanceMatrixService();
+      const response = await service.getDistanceMatrix({
+        origins: [position],
+        destinations: [{ lat: station.latitude, lng: station.longitude }],
+        travelMode: 'DRIVING',
+        unitSystem: window.google.maps.UnitSystem.METRIC
+      });
+
+      if (response.rows[0]?.elements[0]?.status === 'OK') {
+        const { distance } = response.rows[0].elements[0];
+        // Store the distance in state
+        setStationDistances(prev => ({
+          ...prev,
+          [station.station_id]: distance.text
+        }));
+        return distance.text;
+      }
+    } catch (error) {
+      console.error('Error calculating distance:', error);
+    }
+    return "N/A";
+  };
+
+  const getStationDistance = (station) => {
+    // Start calculation if we don't have the distance yet
+    if (!stationDistances[station.station_id]) {
+      calculateDistance(station);
+      return "Calculating...";
+    }
+    return stationDistances[station.station_id];
   };
 
   return (
@@ -140,7 +183,6 @@ export default function MapView({ stations = [], userLocation }) {
                 />
               </div>
             </div>
-
             {/* Display user's current location */}
             <AdvancedMarker position={position}>
               <img
@@ -150,7 +192,7 @@ export default function MapView({ stations = [], userLocation }) {
               />
             </AdvancedMarker>
 
-            {/* Display nearby stations */}
+            {/* Display markers for each station */}
             {stations.map((station) => (
               <AdvancedMarker
                 key={station.station_id}
@@ -183,53 +225,10 @@ export default function MapView({ stations = [], userLocation }) {
                     </div>
                   </div>
                   <div className={styles.distanceBox}>
-                    {/* Calculate distance if needed */}
-                    {calculateDistance(position, {
-                      lat: station.latitude,
-                      lng: station.longitude,
-                    })}{" "}
-                    KM
+                    {getStationDistance(station)}
                   </div>
                 </div>
               </AdvancedMarker>
-            ))}
-
-            {/* Display station information boxes */}
-            {stations.slice(0, 3).map((station, index) => (
-              <div
-                key={station.station_id}
-                className={styles[`station${index + 1}Box`]}
-              >
-                <div className={styles[`station${index + 1}Title`]}>
-                  <h3>{station.name}</h3>
-                  <h5>{station.address}</h5>
-                </div>
-                <div className={styles[`station${index + 1}Info`]}>
-                  <h4>Opening hours V</h4>
-                  <div className={styles.servicesList}>
-                    {station.services && (
-                      <ul>
-                        {station.services.map((service) => (
-                          <li key={service} className={styles.serviceItem}>
-                            {service}
-                          </li>
-                        ))}
-                      </ul>
-                    )}
-                  </div>
-                </div>
-                <div className={styles.stationBtns}>
-                  <button className={styles.directionsBtn}>
-                    Get directions
-                  </button>
-                  <img
-                    src={`${active ? fullHeart : heart}`}
-                    alt=""
-                    onClick={handleClick}
-                    className={styles.heartImg}
-                  />
-                </div>
-              </div>
             ))}
 
             {/* Info window for selected station */}
@@ -288,20 +287,4 @@ export default function MapView({ stations = [], userLocation }) {
       </APIProvider>
     </>
   );
-}
-
-// Helper function to calculate distance between two points
-function calculateDistance(point1, point2) {
-  const R = 6371; // Earth's radius in km
-  const dLat = ((point2.lat - point1.lat) * Math.PI) / 180;
-  const dLon = ((point2.lng - point1.lng) * Math.PI) / 180;
-  const a =
-    Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-    Math.cos((point1.lat * Math.PI) / 180) *
-      Math.cos((point2.lat * Math.PI) / 180) *
-      Math.sin(dLon / 2) *
-      Math.sin(dLon / 2);
-  const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-  const distance = R * c;
-  return distance.toFixed(1);
 }
