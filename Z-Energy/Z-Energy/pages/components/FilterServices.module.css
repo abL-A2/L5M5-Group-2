@@ -76,7 +76,7 @@
 .filterBtnBox {
   display: flex;
   flex-direction: row;
-  gap: 2%;
+  gap: 1%;
   width: 45vw;
   /* background-color: #7575e7; */
 }
@@ -102,7 +102,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: 41px; /* 186.364% */
-  margin-top: 1%;
+  margin-top: 2%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -137,7 +137,7 @@
   font-style: normal;
   font-weight: 700;
   line-height: 41px; /* 186.364% */
-  margin-top: 1%;
+  margin-top: 2%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -170,6 +170,7 @@ color: #1E196A;
 font-weight: 500;
 padding-left: 2%;
 padding-right: 2%;
+margin-top: 1%;
 }
 
 .fuel1 {

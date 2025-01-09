@@ -36,7 +36,7 @@ export default function MapView({ stations = [], userLocation }) {
 
   const calculateDistance = async (station) => {
     if (!window.google || !station || !position) return "Calculating...";
-    
+
     // If we already have the distance, return it
     if (stationDistances[station.station_id]) {
       return stationDistances[station.station_id];
@@ -47,21 +47,21 @@ export default function MapView({ stations = [], userLocation }) {
       const response = await service.getDistanceMatrix({
         origins: [position],
         destinations: [{ lat: station.latitude, lng: station.longitude }],
-        travelMode: 'DRIVING',
-        unitSystem: window.google.maps.UnitSystem.METRIC
+        travelMode: "DRIVING",
+        unitSystem: window.google.maps.UnitSystem.METRIC,
       });
 
-      if (response.rows[0]?.elements[0]?.status === 'OK') {
+      if (response.rows[0]?.elements[0]?.status === "OK") {
         const { distance } = response.rows[0].elements[0];
         // Store the distance in state
-        setStationDistances(prev => ({
+        setStationDistances((prev) => ({
           ...prev,
-          [station.station_id]: distance.text
+          [station.station_id]: distance.text,
         }));
         return distance.text;
       }
     } catch (error) {
-      console.error('Error calculating distance:', error);
+      console.error("Error calculating distance:", error);
     }
     return "N/A";
   };
