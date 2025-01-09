@@ -73,8 +73,125 @@
   width: 45%;
 }
 
-.resetFiltersBtn{
+.filterBtnBox {
+  display: flex;
+  flex-direction: row;
+  gap: 2%;
+  width: 45vw;
+  /* background-color: #7575e7; */
+}
+
+.btnCircle {
+  border-radius: 32px;
+  background: #fff;
+  width: 31px;
+  height: 33.022px;
+  flex-shrink: 0;
+}
+
+.resetFiltersBtn {
   border-radius: 52px;
-background: linear-gradient(270deg, #FEA03A 0%, #FFCB08 100%);
-backdrop-filter: blur(7.5px);
+  background: linear-gradient(270deg, #fea03a 0%, #ffcb08 100%);
+  backdrop-filter: blur(7.5px);
+  width: 14vw;
+  height: 5vh;
+  color: #fff;
+  text-align: center;
+  border: none;
+  /* font-size: 22px; */
+  font-style: normal;
+  font-weight: 700;
+  line-height: 41px; /* 186.364% */
+  margin-top: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.resetFiltersBtn p {
+  padding-right: 4vw;
+}
+
+.resetFiltersBtn img {
+  display: flex;
+  width: 1.5vw;
+  transform: rotate(180deg);
+  padding: 2px 3.551px;
+  justify-content: center;
+  align-self: center;
+  align-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.applyFiltersBtn {
+  border-radius: 52px;
+  background: linear-gradient(270deg, #7575e7 0%, #322aad 100%);
+  backdrop-filter: blur(7.5px);
+  width: 14vw;
+  height: 5vh;
+  color: #fff;
+  text-align: center;
+  border: none;
+  /* font-size: 22px; */
+  font-style: normal;
+  font-weight: 700;
+  line-height: 41px; /* 186.364% */
+  margin-top: 1%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.applyFiltersBtn p {
+  padding-left: 4vw;
+}
+
+.applyFiltersBtn img {
+  display: flex;
+  width: 1.5vw;
+  padding: 2px 3.551px;
+  justify-content: center;
+  align-self: center;
+  align-content: center;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.fuelKey{
+  width: 25vw;
+  /* background-color: #2c259b; */
+  border-radius: 16px;
+background: #F8F8F8;
+display: flex;
+align-items: center;
+gap: 3%;
+color: #1E196A;
+font-weight: 500;
+padding-left: 2%;
+padding-right: 2%;
+}
+
+.fuel1 {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  border-radius: 32px;
+  background: #ed550e;
+}
+
+.fuel2 {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  border-radius: 32px;
+  background: #f8852c;
+}
+
+.fuel3 {
+  width: 35px;
+  height: 35px;
+  flex-shrink: 0;
+  border-radius: 32px;
+  background: #ffb12e;
 }

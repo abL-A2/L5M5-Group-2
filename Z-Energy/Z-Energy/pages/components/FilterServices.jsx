@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import arrowRight from "/arrowRight.png";
 import styles from "./FilterServices.module.css";
 // import here the three different filter components - distance, price, services
 
@@ -52,10 +53,28 @@ export default function FilterServices() {
               <button className={styles.filterBtn}>Cheapest</button>
               <button className={styles.filterBtn}>Economical</button>
             </div>
-
           </div>
-          <div>
-            <button className={styles.resetFiltersBtn}>Reset filters</button>
+        </div>
+        <div className={styles.splitBox}>
+          <div className={styles.filterBtnBox}>
+            <button className={styles.resetFiltersBtn}>
+              {" "}
+              <div className={styles.btnCircle}>
+                <img src={arrowRight} alt="" />
+              </div>
+              <p> Reset filters</p>
+            </button>
+            <button className={styles.applyFiltersBtn}>
+              <p> Apply filters</p>
+              <div className={styles.btnCircle}>
+                <img src={arrowRight} alt="" />
+              </div>
+            </button>
+          </div>
+          <div className={styles.fuelKey}>
+          <div className={styles.fuel1}> </div><p>ZX premium</p>
+          <div className={styles.fuel2}> </div><p>Z91 unleaded</p>
+          <div className={styles.fuel3}> </div><p>Z diesel</p>
           </div>
         </div>
       </div>
