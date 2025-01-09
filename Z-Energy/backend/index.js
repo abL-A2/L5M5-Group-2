@@ -111,9 +111,6 @@ const handleRequest = async (address) => {
   }
 };
 
-//   // Example address to test
-handleRequest("34 Panehe Lane, Auckland");
-
 // endpoint hit in FindStation.jsx when searching for address
 app.get("/address", async (req, res) => {
   try {

@@ -90,10 +90,6 @@ function FindStation({ onStationsFound, onLocationUpdate }) {
     }
   };
 
-  const handleContentClick = (event) => {
-    console.log(event.target.id);
-  };
-
   return (
     <>
       <div className={styles.findStnBox}>
